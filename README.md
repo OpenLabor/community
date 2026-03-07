@@ -4,7 +4,8 @@
 </p>
 
 <p align="center">
-  <a href="https://labor.so">Website</a> &middot;
+  <a href="https://openlabor.ai">OpenLabor</a> &middot;
+  <a href="https://labor.so">Labor Cloud</a> &middot;
   <a href="#skills">Skills</a> &middot;
   <a href="#contributing">Contributing</a> &middot;
   <a href="https://github.com/OpenLabor/community/issues">Issues</a>
@@ -14,9 +15,16 @@
 
 ## What is OpenLabor?
 
-[Labor](https://labor.so) is an AI workforce platform — hire AI employees that work like real team members.
+**[OpenLabor](https://openlabor.ai)** is the open source community powering the AI workforce. This repo contains skills, templates, and resources that anyone can use, improve, or build on.
 
-**OpenLabor** is the open source community around it. This repo contains skills, templates, and resources that anyone can use, improve, or build on.
+**[Labor](https://labor.so)** is the commercial platform — deploy AI employees instantly with zero setup. If you want to try skills in production right now, [sign up at labor.so](https://labor.so).
+
+| | OpenLabor | Labor Cloud |
+|---|---|---|
+| **What** | Open source skills, tools, resources | Managed AI workforce platform |
+| **For** | Developers, contributors, tinkerers | Teams and businesses |
+| **Where** | [openlabor.ai](https://openlabor.ai) / [GitHub](https://github.com/OpenLabor) | [labor.so](https://labor.so) |
+| **Price** | Free, MIT licensed | Usage-based pricing |
 
 ## Repository Structure
 
@@ -36,6 +44,8 @@ Skills are structured instructions that give AI agents specialized capabilities.
 | [Domain Advisor](skills/domain-advisor/) | Find, check, and evaluate domain names with weighted business scoring across 7 dimensions | [domain-checker.yoann.workers.dev](https://domain-checker.yoann.workers.dev) |
 
 > More skills coming soon. Want to build one? See [Contributing](#contributing) below.
+>
+> Want to use skills instantly without setup? Try them on **[labor.so](https://labor.so)**.
 
 ### How Skills Work
 
@@ -51,13 +61,16 @@ Skills work with any AI agent that supports structured prompts — Claude Code, 
 
 ### Using a Skill
 
-**Option 1: Copy and paste**
+**Option 1: Labor Cloud** (fastest)
+Use skills instantly on [labor.so](https://labor.so) — no setup, no configuration, just results.
+
+**Option 2: Copy and paste**
 Grab the `SKILL.md` content and add it to your AI agent's system prompt or instructions.
 
-**Option 2: Claude Code (with OMC)**
+**Option 3: Claude Code (with OMC)**
 Drop the skill folder into `~/.claude/skills/omc-learned/` and it activates automatically on trigger keywords.
 
-**Option 3: Reference directly**
+**Option 4: Reference directly**
 Point your agent to the raw GitHub URL and let it fetch the instructions.
 
 ## Contributing
@@ -117,5 +130,7 @@ MIT — use these skills however you want, commercially or otherwise.
 ---
 
 <p align="center">
+  <a href="https://openlabor.ai">openlabor.ai</a> &middot; <a href="https://labor.so">labor.so</a>
+  <br>
   Built by <a href="https://labor.so">Labor</a> and the open source community
 </p>
