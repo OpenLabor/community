@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">OpenLabor Community</h1>
+<h1 align="center">OpenLabor</h1>
 
 <p align="center">
   <strong>Open source employees, skills, and missions for the AI workforce.</strong>
