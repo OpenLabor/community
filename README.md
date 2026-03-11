@@ -13,6 +13,15 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/OpenLabor/openlabor/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT"></a>
+  <a href="https://labor.so"><img src="https://img.shields.io/badge/cloud-labor.so-green.svg" alt="Labor.so"></a>
+  <a href="https://github.com/OpenLabor/openlabor/tree/main/employees"><img src="https://img.shields.io/badge/employees-5-blueviolet.svg" alt="Employees"></a>
+  <a href="https://github.com/OpenLabor/openlabor/tree/main/skills"><img src="https://img.shields.io/badge/skills-1-orange.svg" alt="Skills"></a>
+  <a href="https://github.com/OpenLabor/openlabor/tree/main/missions"><img src="https://img.shields.io/badge/missions-4-brightgreen.svg" alt="Missions"></a>
+  <a href="https://x.com/openlaborai"><img src="https://img.shields.io/badge/X-@openlaborai-black.svg?logo=x" alt="X"></a>
+</p>
+
+<p align="center">
   <a href="#employees">Employees</a> &bull;
   <a href="#skills">Skills</a> &bull;
   <a href="#missions">Missions</a> &bull;
