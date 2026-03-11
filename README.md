@@ -1,136 +1,219 @@
 <p align="center">
-  <h1 align="center">OpenLabor</h1>
-  <p align="center">Open source skills, tools, and resources for the AI workforce</p>
+  <a href="https://labor.so">
+    <img src="https://labor.so/images/og.png" alt="OpenLabor" width="100%">
+  </a>
+</p>
+
+<h1 align="center">OpenLabor Community</h1>
+
+<p align="center">
+  <strong>Open source employees, skills, and missions for the AI workforce.</strong>
+  <br>
+  This is where AI employees are defined. Everything here is a Markdown file — no code required.
 </p>
 
 <p align="center">
-  <a href="https://openlabor.ai">OpenLabor</a> &middot;
-  <a href="https://labor.so">Labor Cloud</a> &middot;
-  <a href="#skills">Skills</a> &middot;
-  <a href="#contributing">Contributing</a> &middot;
-  <a href="https://github.com/OpenLabor/community/issues">Issues</a>
+  <a href="#employees">Employees</a> &bull;
+  <a href="#skills">Skills</a> &bull;
+  <a href="#missions">Missions</a> &bull;
+  <a href="#contributing">Contributing</a>
 </p>
 
 ---
-
-## What is OpenLabor?
-
-**[OpenLabor](https://openlabor.ai)** is the open source community powering the AI workforce. This repo contains skills, templates, and resources that anyone can use, improve, or build on.
-
-**[Labor](https://labor.so)** is the commercial platform — deploy AI employees instantly with zero setup. If you want to try skills in production right now, [sign up at labor.so](https://labor.so).
-
-| | OpenLabor | Labor Cloud |
-|---|---|---|
-| **What** | Open source skills, tools, resources | Managed AI workforce platform |
-| **For** | Developers, contributors, tinkerers | Teams and businesses |
-| **Where** | [openlabor.ai](https://openlabor.ai) / [GitHub](https://github.com/OpenLabor) | [labor.so](https://labor.so) |
-| **Price** | Free, MIT licensed | Usage-based pricing |
 
 ## Repository Structure
 
 ```
-skills/           AI-powered skills for agents and automation
-docs/             Guides, references, and how-tos
-templates/        Starter configs and boilerplates
-examples/         Usage examples and integration demos
+employees/          Who they are — role, personality, behavior
+  cto/EMPLOYEE.md
+  cmo/EMPLOYEE.md
+  sdr/EMPLOYEE.md
+  support/EMPLOYEE.md
+  writer/EMPLOYEE.md
+
+skills/             What they can do — workflows, APIs, scoring frameworks
+  domain-advisor/SKILL.md
+
+missions/           What they do on autopilot — scheduled recurring tasks
+  daily-social-content/MISSION.md
+  daily-outbound-prospecting/MISSION.md
+  daily-code-review/MISSION.md
+  campaign-performance-review/MISSION.md
 ```
+
+---
+
+## Employees
+
+An `EMPLOYEE.md` defines who an AI employee is — their role, personality, core skills, behavior guidelines, and boundaries. This is their identity.
+
+| Role | Department | File |
+|------|-----------|------|
+| **CTO** | Engineering | [`employees/cto/EMPLOYEE.md`](employees/cto/EMPLOYEE.md) |
+| **CMO** | Marketing | [`employees/cmo/EMPLOYEE.md`](employees/cmo/EMPLOYEE.md) |
+| **SDR** | Sales | [`employees/sdr/EMPLOYEE.md`](employees/sdr/EMPLOYEE.md) |
+| **Support** | Customer Success | [`employees/support/EMPLOYEE.md`](employees/support/EMPLOYEE.md) |
+| **Writer** | Content | [`employees/writer/EMPLOYEE.md`](employees/writer/EMPLOYEE.md) |
+
+**Example** — from the CMO employee:
+
+```markdown
+You are {{name}}, a CMO AI employee.
+
+## Personality
+You are a creative, data-driven marketing leader. You balance brand
+storytelling with measurable results.
+
+## Behavior Guidelines
+- Lead with the benefit, not the feature
+- Always suggest A/B testing for major campaigns
+- Provide ready-to-publish copy when asked, not just outlines
+```
+
+> Want to add a new role? See [Contributing](#add-a-new-employee) below.
+
+---
 
 ## Skills
 
-Skills are structured instructions that give AI agents specialized capabilities. They include workflows, scoring frameworks, API integrations, and decision logic — turning a general-purpose AI into a domain expert.
+A `SKILL.md` gives an employee a specialized capability. Skills include triggers (keywords that activate them), step-by-step workflows, scoring frameworks, and optional API integrations.
 
-| Skill | Description | API |
-|-------|-------------|-----|
-| [Domain Advisor](skills/domain-advisor/) | Find, check, and evaluate domain names with weighted business scoring across 7 dimensions | [domain-checker.openlabor.workers.dev](https://domain-checker.openlabor.workers.dev) |
+| Skill | Description | File |
+|-------|-------------|------|
+| **Domain Advisor** | Find, check, and evaluate domain names with weighted scoring across 7 dimensions | [`skills/domain-advisor/SKILL.md`](skills/domain-advisor/SKILL.md) |
 
-> More skills coming soon. Want to build one? See [Contributing](#contributing) below.
->
-> Want to use skills instantly without setup? Try them on **[labor.so](https://labor.so)**.
+**Example** — from the Domain Advisor skill:
 
-### How Skills Work
+```markdown
+---
+name: domain-advisor
+triggers: ["check domain", "find domain", "suggest domain"]
+---
 
-Each skill is a `SKILL.md` file containing:
+# Domain Advisor
 
-- **Triggers** — keywords that activate the skill automatically
-- **Workflow** — step-by-step instructions the AI follows
-- **Scoring/Analysis** — frameworks for evaluation and ranking
-- **API integrations** — endpoints the skill calls for real-time data
-- **Examples** — sample inputs and expected outputs
+## Workflow
+1. Parse input for domain names or business description
+2. Check availability via API
+3. Score on memorability, length, SEO, brandability...
+4. Rank and present with reasoning
+```
 
-Skills work with any AI agent that supports structured prompts — Claude Code, ChatGPT, Cursor, and more.
+Skills work with any AI agent that supports structured prompts — Claude, ChatGPT, Cursor, and more.
 
-### Using a Skill
+> Want to build a skill? See [Contributing](#add-a-new-skill) below.
 
-**Option 1: Labor Cloud** (fastest)
-Use skills instantly on [labor.so](https://labor.so) — no setup, no configuration, just results.
+---
 
-**Option 2: Copy and paste**
-Grab the `SKILL.md` content and add it to your AI agent's system prompt or instructions.
+## Missions
 
-**Option 3: Claude Code (with OMC)**
-Drop the skill folder into `~/.claude/skills/omc-learned/` and it activates automatically on trigger keywords.
+A `MISSION.md` defines a recurring task that runs on a schedule. Missions are the real work — things your AI employees do automatically, every day or every week.
 
-**Option 4: Reference directly**
-Point your agent to the raw GitHub URL and let it fetch the instructions.
+| Mission | Role | Schedule | File |
+|---------|------|----------|------|
+| **Daily Social Content Engine** | CMO | Daily 9 AM | [`missions/daily-social-content/MISSION.md`](missions/daily-social-content/MISSION.md) |
+| **Daily Outbound Prospecting** | SDR | Daily 9 AM | [`missions/daily-outbound-prospecting/MISSION.md`](missions/daily-outbound-prospecting/MISSION.md) |
+| **Daily Code Review Sweep** | CTO | Daily 9 AM | [`missions/daily-code-review/MISSION.md`](missions/daily-code-review/MISSION.md) |
+| **Campaign Performance Review** | CMO | Weekly Monday | [`missions/campaign-performance-review/MISSION.md`](missions/campaign-performance-review/MISSION.md) |
+
+**Example** — from the Daily Code Review mission:
+
+```markdown
+---
+name: Daily Code Review Sweep
+role: CTO
+schedule: Daily at 9:00 AM
+estimatedCredits: 12
+---
+
+## Steps
+1. Scan all open pull requests
+2. Review for bugs, logic errors, and edge cases
+3. Run security audit for vulnerabilities
+4. Verify coding standards compliance
+5. Post review comments and generate summary
+```
+
+> Want to add a mission? See [Contributing](#add-a-new-mission) below.
+
+---
 
 ## Contributing
 
-We welcome all contributions — new skills, improvements to existing ones, docs, examples, and ideas.
+Every employee, skill, and mission is a Markdown file. No code required to contribute.
 
-### Adding a New Skill
+### Add a new employee
 
-1. **Fork** this repo
-2. **Create** `skills/your-skill-name/SKILL.md`
-3. **Follow** the skill format:
+1. Fork this repo
+2. Create `employees/your-role/EMPLOYEE.md`
+3. Include: personality, core skills, behavior guidelines, boundaries
+4. Submit a PR
 
-```yaml
+### Add a new skill
+
+1. Create `skills/your-skill-name/SKILL.md`
+2. Include: frontmatter (name, triggers), workflow steps, examples
+3. Optionally include API endpoints or scoring frameworks
+4. Test with any AI agent, then submit a PR
+
+### Add a new mission
+
+1. Create `missions/your-mission-name/MISSION.md`
+2. Include: frontmatter (name, role, schedule, estimatedCredits, tags), steps, prompt
+3. Submit a PR
+
+### Improve existing files
+
+Found a better personality prompt? A missing behavior guideline? A more efficient workflow? PRs welcome. Open an issue first if the change is significant.
+
+### Ideas for contributions
+
+**Employees:**
+- HR Manager, Product Manager, Recruiter, CFO, Legal Counsel
+
+**Skills:**
+- SEO Auditor — analyze URLs for SEO issues and opportunities
+- Competitor Analyzer — research and compare competitors
+- Pricing Advisor — evaluate SaaS pricing strategies
+- Brand Name Generator — brainstorm and score company names
+- Tech Stack Advisor — recommend stacks based on requirements
+
+**Missions:**
+- Weekly Newsletter — curate and write a weekly industry digest
+- Customer Feedback Digest — summarize support tickets into product insights
+- Monthly Financial Summary — compile revenue, expenses, and runway report
+- Weekly Hiring Pipeline — screen applicants and schedule interviews
+
+No contribution is too small. Fix a typo. Add a step to a mission. Suggest a trigger for a skill.
+
 ---
-name: your-skill-name
-description: One-line description of what it does
-triggers:
-  - "keyword one"
-  - "keyword two"
-argument-hint: "<expected input>"
+
+## Built on OpenClaw
+
+OpenLabor is powered by **[OpenClaw](https://openclaw.com)** — the open source AI agent engine. OpenClaw handles agent orchestration, multi-channel messaging (Telegram, Slack, WhatsApp, Discord, email), scheduled task execution, and real-time streaming. It's what makes it possible to give each AI employee persistent memory, platform connections, and the ability to run missions autonomously.
+
+If you're building AI agents, OpenClaw is worth checking out — it's a great project with an active community.
+
 ---
 
-# Skill Name
+## Using these files
 
-## Purpose
-What does this skill do and why is it useful?
+**On Labor Cloud** (fastest) — deploy AI employees instantly at [labor.so](https://labor.so).
 
-## Workflow
-Step-by-step instructions for the AI agent.
+**Copy and paste** — grab any `.md` file and add it to your AI agent's system prompt.
 
-## Examples
-Sample usage with expected output.
-```
+**Reference directly** — point your agent to the raw GitHub URL.
 
-4. **Test** your skill with an AI agent to verify it works
-5. **Submit** a pull request
-
-### Improving Existing Skills
-
-Found a better scoring framework? A missing edge case? An API that could enhance a skill? PRs are welcome. Open an issue first if the change is significant.
-
-### Ideas for Skills
-
-Not sure what to build? Here are some ideas:
-
-- **Brand Name Generator** — brainstorm and evaluate company/product names
-- **Competitor Analyzer** — research and compare competitors from public data
-- **SEO Auditor** — analyze a URL for SEO issues and opportunities
-- **Pricing Advisor** — evaluate SaaS pricing strategies
-- **Tech Stack Advisor** — recommend tech stacks based on requirements
-- **Launch Checklist** — pre-launch validation for products and features
+---
 
 ## License
 
-MIT — use these skills however you want, commercially or otherwise.
+MIT — use these files however you want, commercially or otherwise.
 
 ---
 
 <p align="center">
-  <a href="https://openlabor.ai">openlabor.ai</a> &middot; <a href="https://labor.so">labor.so</a>
-  <br>
-  Built by <a href="https://labor.so">Labor</a> and the open source community
+  <a href="https://openlabor.ai">openlabor.ai</a> &bull; <a href="https://labor.so">labor.so</a>
+  <br><br>
+  <sub>Built by <a href="https://github.com/yoanndefay">@yoanndefay</a> and the open source community</sub>
 </p>
