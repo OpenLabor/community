@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+# openlabor-update-check — periodic version check
+#
+# Output (one line, or nothing):
+#   JUST_UPGRADED <old> <new>       — marker from recent upgrade
+#   UPGRADE_AVAILABLE <old> <new>   — remote VERSION > local
+#   (nothing)                       — up to date, snoozed, or check skipped
+set -euo pipefail
+
+OPENLABOR_DIR="${OPENLABOR_DIR:-$(cd "$(dirname "$0")/.." && pwd)}"
+STATE_DIR="${OPENLABOR_STATE_DIR:-$HOME/.openlabor}"
+CACHE_FILE="$STATE_DIR/last-update-check"
+MARKER_FILE="$STATE_DIR/just-upgraded-from"
+SNOOZE_FILE="$STATE_DIR/update-snoozed"
+VERSION_FILE="$OPENLABOR_DIR/VERSION"
+REMOTE_URL="${OPENLABOR_REMOTE_URL:-https://raw.githubusercontent.com/OpenLabor/openlabor/main/cli/VERSION}"
+
+# Force flag
+if [ "${1:-}" = "--force" ]; then
+  rm -f "$CACHE_FILE"
+fi
+
+# Check if updates are disabled
+_UC=$("$OPENLABOR_DIR/bin/openlabor-config" get update_check 2>/dev/null || true)
+if [ "$_UC" = "false" ]; then
+  exit 0
+fi
+
+# Check just-upgraded marker
+if [ -f "$MARKER_FILE" ]; then
+  OLD_VER=$(cat "$MARKER_FILE")
+  NEW_VER=$(cat "$VERSION_FILE" 2>/dev/null || echo "unknown")
+  echo "JUST_UPGRADED $OLD_VER $NEW_VER"
+  rm -f "$MARKER_FILE"
+  exit 0
+fi
+
+# Check cache (24h)
+mkdir -p "$STATE_DIR"
+if [ -f "$CACHE_FILE" ]; then
+  LAST=$(cat "$CACHE_FILE")
+  NOW=$(date +%s)
+  DIFF=$((NOW - LAST))
+  if [ "$DIFF" -lt 86400 ]; then
+    exit 0
+  fi
+fi
+
+# Fetch remote version
+LOCAL_VER=$(cat "$VERSION_FILE" 2>/dev/null || echo "0.0.0")
+REMOTE_VER=$(curl -sf --max-time 5 "$REMOTE_URL" 2>/dev/null || true)
+if [ -z "$REMOTE_VER" ]; then
+  date +%s > "$CACHE_FILE"
+  exit 0
+fi
+REMOTE_VER=$(echo "$REMOTE_VER" | tr -d '[:space:]')
+
+date +%s > "$CACHE_FILE"
+
+# Compare versions
+if [ "$REMOTE_VER" != "$LOCAL_VER" ]; then
+  # Check snooze
+  if [ -f "$SNOOZE_FILE" ]; then
+    SNOOZED_VER=$(awk '{print $1}' "$SNOOZE_FILE" 2>/dev/null || true)
+    SNOOZED_LEVEL=$(awk '{print $2}' "$SNOOZE_FILE" 2>/dev/null || true)
+    SNOOZED_EPOCH=$(awk '{print $3}' "$SNOOZE_FILE" 2>/dev/null || true)
+
+    if [ "$SNOOZED_VER" = "$REMOTE_VER" ] && [ -n "$SNOOZED_EPOCH" ]; then
+      NOW=$(date +%s)
+      case "$SNOOZED_LEVEL" in
+        1) DURATION=86400 ;;
+        2) DURATION=172800 ;;
+        *) DURATION=604800 ;;
+      esac
+      EXPIRES=$((SNOOZED_EPOCH + DURATION))
+      if [ "$NOW" -lt "$EXPIRES" ]; then
+        exit 0  # still snoozed
+      fi
+    fi
+  fi
+  echo "UPGRADE_AVAILABLE $LOCAL_VER $REMOTE_VER"
+fi

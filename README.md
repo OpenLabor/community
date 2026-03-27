@@ -307,6 +307,45 @@ If you're building AI agents, OpenClaw is worth checking out — it's a great pr
 
 ## Using these files
 
+### CLI — Install skills into any AI coding tool
+
+The `openlabor` CLI lets you browse the registry and install any employee or skill into Claude Code, Cursor, Codex, OpenCode, Windsurf, and more.
+
+```bash
+npx openlabor list employees        # browse 15 AI employees
+npx openlabor list skills           # browse 25+ skills
+npx openlabor search "logo"         # search across both
+npx openlabor install skill logo-maker       # auto-detects your tool
+npx openlabor install employee cto           # install an AI persona
+```
+
+#### Supported tools
+
+Install into any tool with `--target` (or let it auto-detect):
+
+```bash
+openlabor install skill logo-maker                    # auto-detect
+openlabor install skill logo-maker --target claude    # .claude/commands/logo-maker.md
+openlabor install skill logo-maker --target cursor    # .cursor/rules/logo-maker.mdc
+openlabor install skill logo-maker --target codex     # codex.md (appended)
+openlabor install skill logo-maker --target opencode  # opencode.md (appended)
+openlabor install skill logo-maker --target windsurf  # .windsurfrules (appended)
+```
+
+#### Versioning & updates
+
+Every installed skill tracks its version. Keep everything up to date:
+
+```bash
+openlabor version                   # show version, install type, registry stats
+openlabor update                    # upgrade CLI to latest
+openlabor outdated                  # list skills installed with older versions
+openlabor update-skills             # re-install all tracked skills to latest
+openlabor config auto_upgrade true  # enable automatic upgrades
+```
+
+### Other ways to use
+
 **On Labor Cloud** (fastest) — deploy AI employees instantly at [labor.so](https://labor.so).
 
 **Copy and paste** — grab any `.md` file and add it to your AI agent's system prompt.

@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# openlabor-config — read/write ~/.openlabor/config.yaml
+set -euo pipefail
+
+CONFIG_DIR="${OPENLABOR_STATE_DIR:-$HOME/.openlabor}"
+CONFIG_FILE="$CONFIG_DIR/config.yaml"
+
+usage() {
+  echo "Usage: openlabor-config get <key>"
+  echo "       openlabor-config set <key> <value>"
+  exit 1
+}
+
+[ $# -lt 2 ] && usage
+
+CMD="$1"
+KEY="$2"
+
+case "$CMD" in
+  get)
+    if [ ! -f "$CONFIG_FILE" ]; then
+      # Return defaults
+      case "$KEY" in
+        auto_upgrade) echo "false" ;;
+        default_target) echo "claude" ;;
+        update_check) echo "true" ;;
+        *) echo "" ;;
+      esac
+      exit 0
+    fi
+    # Extract value from YAML
+    VALUE=$(grep "^${KEY}:" "$CONFIG_FILE" 2>/dev/null | sed 's/^[^:]*:\s*//' | tr -d '"'"'" || true)
+    if [ -z "$VALUE" ]; then
+      case "$KEY" in
+        auto_upgrade) echo "false" ;;
+        default_target) echo "claude" ;;
+        update_check) echo "true" ;;
+        *) echo "" ;;
+      esac
+    else
+      echo "$VALUE"
+    fi
+    ;;
+  set)
+    [ $# -lt 3 ] && usage
+    VALUE="$3"
+    mkdir -p "$CONFIG_DIR"
+    if [ ! -f "$CONFIG_FILE" ]; then
+      echo "${KEY}: ${VALUE}" > "$CONFIG_FILE"
+    elif grep -q "^${KEY}:" "$CONFIG_FILE" 2>/dev/null; then
+      # Replace existing key
+      sed -i'' -e "s/^${KEY}:.*/${KEY}: ${VALUE}/" "$CONFIG_FILE"
+    else
+      # Append new key
+      echo "${KEY}: ${VALUE}" >> "$CONFIG_FILE"
+    fi
+    echo "Set ${KEY} = ${VALUE}"
+    ;;
+  *)
+    usage
+    ;;
+esac

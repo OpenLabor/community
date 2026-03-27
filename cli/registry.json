@@ -1,0 +1,4 @@
+{
+  "employees": ["accountant", "analyst", "brand-advisor", "cmo", "coo", "cto", "designer", "email-secretary", "hr", "lead-finder", "logo-designer", "sdr", "social-manager", "writer", "x-manager"],
+  "skills": ["airtable-manager", "animate-story", "cold-outreach", "competitor-analysis", "content-humanizer", "content-summarizer", "data-analyst", "domain-checker", "generate-video", "google-calendar", "image-generator", "instagram-manager", "lead-qualification", "linkedin-manager", "logo-maker", "marketing-psychology", "news-trend-monitor", "prompt-engineering", "reddit-manager", "self-improving-agent", "seo-optimization", "stripe-manager", "web-research", "x-strategy", "youtube-manager"]
+}
