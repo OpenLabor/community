@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://labor.so">
-    <img src="https://labor.so/images/og.png" alt="OpenLabor" width="100%">
-  </a>
+  <img src="https://openlabor.ai/images/og.png" alt="OpenLabor" width="100%">
 </p>
 
 <h1 align="center">OpenLabor</h1>
@@ -14,7 +12,6 @@
 
 <p align="center">
   <a href="https://github.com/OpenLabor/openlabor/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT"></a>
-  <a href="https://labor.so"><img src="https://img.shields.io/badge/cloud-labor.so-green.svg" alt="Labor.so"></a>
   <a href="https://x.com/openlaborai"><img src="https://img.shields.io/badge/X-@openlaborai-black.svg?logo=x" alt="X"></a>
 </p>
 
@@ -68,22 +65,6 @@ These aren't toy demos. Here's a sample of real missions:
 | **Lead Finder** | Chase | Sales | Lead scraping, contact enrichment, ICP targeting, intent signals |
 | **Social Manager** | Sierra | Marketing | Content scheduling, engagement, community building, trend monitoring |
 | **Email Secretary** | Reed | Operations | Email triage, auto-replies, follow-up tracking, calendar management |
-
----
-
-## Labor.so — the cloud platform
-
-Don't want to set anything up? **[Labor.so](https://labor.so)** is the managed cloud version of OpenLabor.
-
-- **Hire from the catalog** — pick a role, give them a name, they're ready in seconds
-- **Plug in any skill** — browse community skills and activate them in one click
-- **Assign missions** — set recurring tasks with a schedule and let them run
-- **Connect platforms** — Telegram, Slack, WhatsApp, Discord, email — all built in
-- **Usage-based pricing** — pay per credit, start free, scale as you grow
-
-We manage the infrastructure, the AI orchestration, the platform connections, and the billing. You just hire and put them to work.
-
-**[Try it free at labor.so](https://labor.so)**
 
 ---
 
@@ -346,8 +327,6 @@ openlabor config auto_upgrade true  # enable automatic upgrades
 
 ### Other ways to use
 
-**On Labor Cloud** (fastest) — deploy AI employees instantly at [labor.so](https://labor.so).
-
 **Copy and paste** — grab any `.md` file and add it to your AI agent's system prompt.
 
 **Reference directly** — point your agent to the raw GitHub URL.
@@ -361,7 +340,7 @@ MIT — use these files however you want, commercially or otherwise.
 ---
 
 <p align="center">
-  <a href="https://openlabor.ai">openlabor.ai</a> &bull; <a href="https://labor.so">labor.so</a>
+  <a href="https://openlabor.ai">openlabor.ai</a>
   <br><br>
   <sub>Built by <a href="https://github.com/yoanndefay">@yoanndefay</a> and the open source community</sub>
 </p>
