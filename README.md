@@ -286,40 +286,42 @@ If you're building AI agents, OpenClaw is worth checking out — it's a great pr
 
 ---
 
-## Using these files
+## Install — takes 30 seconds
 
-### CLI — Install skills into any AI coding tool
+### Claude Code
 
-The `openlabor` CLI lets you browse the registry and install any employee or skill into Claude Code, Cursor, Codex, OpenCode, Windsurf, and more.
+Open Claude Code and paste this:
+
+> Install openlabor: run **`git clone https://github.com/OpenLabor/openlabor.git ~/.claude/skills/openlabor`** then add an "openlabor" section to CLAUDE.md that lists the available skills from `~/.claude/skills/openlabor/skills/` and employees from `~/.claude/skills/openlabor/employees/`.
+
+All skills become available as slash commands. Try `/logo-maker`, `/seo-optimization`, or `/cold-outreach`.
+
+### Add to your repo so teammates get it (optional)
+
+> Add openlabor to this project: run **`cp -Rf ~/.claude/skills/openlabor .claude/skills/openlabor && rm -rf .claude/skills/openlabor/.git`** then add an "openlabor" section to this project's CLAUDE.md listing the available skills and employees.
+
+Real files get committed to your repo, so `git clone` just works. Everything lives inside `.claude/`.
+
+### Codex, Cursor, OpenCode, Windsurf
+
+Use the CLI to install individual skills into any tool:
 
 ```bash
-npx openlabor list employees        # browse 15 AI employees
-npx openlabor list skills           # browse 25+ skills
-npx openlabor search "logo"         # search across both
-npx openlabor install skill logo-maker       # auto-detects your tool
-npx openlabor install employee cto           # install an AI persona
+npx openlabor list skills                                    # browse 25+ skills
+npx openlabor list employees                                 # browse 15 AI employees
+npx openlabor install skill logo-maker                       # auto-detects your tool
+npx openlabor install skill logo-maker --target cursor       # .cursor/rules/logo-maker.mdc
+npx openlabor install skill logo-maker --target codex        # codex.md (appended)
+npx openlabor install skill logo-maker --target opencode     # opencode.md (appended)
+npx openlabor install skill logo-maker --target windsurf     # .windsurfrules (appended)
+npx openlabor install employee cto --target cursor           # install an AI persona
 ```
 
-#### Supported tools
-
-Install into any tool with `--target` (or let it auto-detect):
-
-```bash
-openlabor install skill logo-maker                    # auto-detect
-openlabor install skill logo-maker --target claude    # .claude/commands/logo-maker.md
-openlabor install skill logo-maker --target cursor    # .cursor/rules/logo-maker.mdc
-openlabor install skill logo-maker --target codex     # codex.md (appended)
-openlabor install skill logo-maker --target opencode  # opencode.md (appended)
-openlabor install skill logo-maker --target windsurf  # .windsurfrules (appended)
-```
-
-#### Versioning & updates
-
-Every installed skill tracks its version. Keep everything up to date:
+### Versioning & updates
 
 ```bash
 openlabor version                   # show version, install type, registry stats
-openlabor update                    # upgrade CLI to latest
+openlabor update                    # upgrade to latest
 openlabor outdated                  # list skills installed with older versions
 openlabor update-skills             # re-install all tracked skills to latest
 openlabor config auto_upgrade true  # enable automatic upgrades
