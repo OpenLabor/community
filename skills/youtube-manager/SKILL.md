@@ -20,7 +20,7 @@ You have access to YouTube through the OpenLabor connector API.
 ## How to Execute YouTube Actions
 
 ```
-openlabor-exec youtube <TOOL_NAME> '<json_args>'
+use youtube <TOOL_NAME> '<json_args>'
 ```
 
 ## Video Management
@@ -156,7 +156,7 @@ openlabor-exec youtube <TOOL_NAME> '<json_args>'
 - Post video summaries in relevant subreddits
 
 ## Guidelines
-1. Always use the exact openlabor-exec command format
+1. Always use the exact use command format
 2. Note the search action spelling: `YOUTUBE_SEARCH_YOU_TUBE` (not YOUTUBE_SEARCH_YOUTUBE)
 3. Delete operations require `"confirmDelete": true`
 4. If you get a 400 "not connected" error, tell the user to connect YouTube in the Apps tab

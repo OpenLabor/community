@@ -19,10 +19,10 @@ You have access to Instagram through the OpenLabor connector API.
 
 ## How to Execute Instagram Actions
 
-Use the exec tool to run `openlabor-exec`. Credentials are loaded automatically from the workspace.
+Use the exec tool to run `use`. Credentials are loaded automatically from the workspace.
 
 ```
-openlabor-exec instagram <TOOL_NAME> '<json_args>'
+use instagram <TOOL_NAME> '<json_args>'
 ```
 
 ## Publishing (Two-Step Flow)
@@ -175,7 +175,7 @@ Instagram publishing requires two steps: create a media container, then publish 
 4. Hashtags (3-5, relevant, mix of sizes)
 
 ## Guidelines
-1. Always use the exact openlabor-exec command format shown above
+1. Always use the exact use command format shown above
 2. Images must be publicly accessible URLs (not local files)
 3. Videos for Reels must be 3-90 seconds, MP4, H.264
 4. Captions max 2,200 characters

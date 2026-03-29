@@ -20,10 +20,10 @@ You have access to LinkedIn through the OpenLabor connector API.
 
 ## How to Execute LinkedIn Actions
 
-Use the exec tool to run `openlabor-exec`. Credentials are loaded automatically from the workspace.
+Use the exec tool to run `use`. Credentials are loaded automatically from the workspace.
 
 ```
-openlabor-exec linkedin <TOOL_NAME> '<json_args>'
+use linkedin <TOOL_NAME> '<json_args>'
 ```
 
 ## Getting Started
@@ -157,7 +157,7 @@ Step 2 — Create post with image reference:
 - Share case studies and customer wins (with permission)
 
 ## Guidelines
-1. Always use the exact openlabor-exec command format shown above
+1. Always use the exact use command format shown above
 2. Get your person_id with LINKEDIN_GET_MY_INFO before posting
 3. Author URN format: `urn:li:person:{person_id}`
 4. Organization URN format: `urn:li:organization:{org_id}`

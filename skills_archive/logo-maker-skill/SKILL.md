@@ -18,13 +18,13 @@ You have access to image generation through the OpenLabor API. API keys are mana
 ## How to Generate
 
 ```
-openlabor-exec images GENERATE '{"prompt":"...","model":"flux-2-pro","aspect_ratio":"1:1","num_images":"4"}'
+use images GENERATE '{"prompt":"...","model":"flux-2-pro","aspect_ratio":"1:1","num_images":"4"}'
 ```
 
 ### Available Models
 
 ```
-openlabor-exec images MODELS '{}'
+use images MODELS '{}'
 ```
 
 | Model | Speed | Best For |
@@ -78,10 +78,10 @@ Always generate from BOTH Flux and Imagen — they have very different styles:
 
 ```
 # Flux — better at geometric/abstract marks
-openlabor-exec images GENERATE '{"prompt":"YOUR_PROMPT","model":"flux-2-pro","aspect_ratio":"1:1","num_images":"4"}'
+use images GENERATE '{"prompt":"YOUR_PROMPT","model":"flux-2-pro","aspect_ratio":"1:1","num_images":"4"}'
 
 # Imagen — better at text rendering and typography
-openlabor-exec images GENERATE '{"prompt":"YOUR_PROMPT","model":"imagen-4","aspect_ratio":"1:1","num_images":"4"}'
+use images GENERATE '{"prompt":"YOUR_PROMPT","model":"imagen-4","aspect_ratio":"1:1","num_images":"4"}'
 ```
 
 ### Step 4: Present and Compare

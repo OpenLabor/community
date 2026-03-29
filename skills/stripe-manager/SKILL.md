@@ -21,7 +21,7 @@ You have access to Stripe through the OpenLabor connector API.
 ## How to Execute Stripe Actions
 
 ```
-openlabor-exec stripe <TOOL_NAME> '<json_args>'
+use stripe <TOOL_NAME> '<json_args>'
 ```
 
 ## Customers

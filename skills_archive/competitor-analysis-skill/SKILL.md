@@ -19,7 +19,7 @@ You are a competitive intelligence analyst who turns public information into str
 ## How to Search
 
 ```
-openlabor-exec search SEARCH '{"query":"your competitor research query","max_results":"10"}'
+use search SEARCH '{"query":"your competitor research query","max_results":"10"}'
 ```
 
 ## Objective
@@ -30,8 +30,8 @@ Build a clear, actionable picture of the competitive landscape — what competit
 
 Start by mapping the landscape:
 ```
-openlabor-exec search SEARCH '{"query":"[product category] competitors alternatives 2026","max_results":"10"}'
-openlabor-exec search SEARCH '{"query":"best [product category] tools comparison","max_results":"10"}'
+use search SEARCH '{"query":"[product category] competitors alternatives 2026","max_results":"10"}'
+use search SEARCH '{"query":"best [product category] tools comparison","max_results":"10"}'
 ```
 
 Tier competitors:
@@ -43,8 +43,8 @@ Tier competitors:
 
 Research each competitor's product:
 ```
-openlabor-exec search SEARCH '{"query":"[competitor] features pricing 2026","max_results":"5"}'
-openlabor-exec search SEARCH '{"query":"[competitor] vs [your product] comparison","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] features pricing 2026","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] vs [your product] comparison","max_results":"5"}'
 ```
 
 Build a feature matrix:
@@ -57,7 +57,7 @@ Build a feature matrix:
 ## Pricing Analysis
 
 ```
-openlabor-exec search SEARCH '{"query":"[competitor] pricing plans 2026","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] pricing plans 2026","max_results":"5"}'
 ```
 
 Document:
@@ -70,8 +70,8 @@ Document:
 ## Positioning & Messaging Analysis
 
 ```
-openlabor-exec search SEARCH '{"query":"[competitor] homepage tagline value proposition","max_results":"5"}'
-openlabor-exec search SEARCH '{"query":"[competitor] marketing campaign messaging 2026","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] homepage tagline value proposition","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] marketing campaign messaging 2026","max_results":"5"}'
 ```
 
 Analyze:
@@ -83,8 +83,8 @@ Analyze:
 ## Content Strategy Analysis
 
 ```
-openlabor-exec search SEARCH '{"query":"[competitor] blog site:[competitor.com]","max_results":"10"}'
-openlabor-exec search SEARCH '{"query":"[competitor] Twitter LinkedIn content 2026","max_results":"10"}'
+use search SEARCH '{"query":"[competitor] blog site:[competitor.com]","max_results":"10"}'
+use search SEARCH '{"query":"[competitor] Twitter LinkedIn content 2026","max_results":"10"}'
 ```
 
 Track:
@@ -97,7 +97,7 @@ Track:
 ## Social Media Presence
 
 ```
-openlabor-exec search SEARCH '{"query":"[competitor] social media followers engagement 2026","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] social media followers engagement 2026","max_results":"5"}'
 ```
 
 Compare:
@@ -125,8 +125,8 @@ Compare:
 ## Customer Review Mining
 
 ```
-openlabor-exec search SEARCH '{"query":"[competitor] reviews complaints G2 Capterra 2026","max_results":"10"}'
-openlabor-exec search SEARCH '{"query":"[competitor] negative reviews what users hate","max_results":"10"}'
+use search SEARCH '{"query":"[competitor] reviews complaints G2 Capterra 2026","max_results":"10"}'
+use search SEARCH '{"query":"[competitor] negative reviews what users hate","max_results":"10"}'
 ```
 
 Extract:

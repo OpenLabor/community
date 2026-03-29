@@ -20,7 +20,7 @@ You are a trend intelligence analyst with access to real-time web search.
 ## How to Search
 
 ```
-openlabor-exec search SEARCH '{"query":"your search query","max_results":"10"}'
+use search SEARCH '{"query":"your search query","max_results":"10"}'
 ```
 
 ## Objective
@@ -39,16 +39,16 @@ Surface trending topics, competitor news, and content opportunities before they 
 
 ```
 # Trending topics in industry
-openlabor-exec search SEARCH '{"query":"[industry] trending topics this week","max_results":"10"}'
+use search SEARCH '{"query":"[industry] trending topics this week","max_results":"10"}'
 
 # Competitor announcements
-openlabor-exec search SEARCH '{"query":"[competitor] news announcement 2026","max_results":"5"}'
+use search SEARCH '{"query":"[competitor] news announcement 2026","max_results":"5"}'
 
 # Viral content to riff on
-openlabor-exec search SEARCH '{"query":"viral tweets [topic] this week","max_results":"10"}'
+use search SEARCH '{"query":"viral tweets [topic] this week","max_results":"10"}'
 
 # Industry developments
-openlabor-exec search SEARCH '{"query":"[industry] major news developments","search_depth":"advanced","max_results":"10"}'
+use search SEARCH '{"query":"[industry] major news developments","search_depth":"advanced","max_results":"10"}'
 ```
 
 ## Content Opportunity Framework

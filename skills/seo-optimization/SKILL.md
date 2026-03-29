@@ -20,7 +20,7 @@ You are an SEO specialist who combines keyword research with high-quality conten
 Use web search to research keywords and competitors:
 
 ```
-openlabor-exec search SEARCH '{"query":"your keyword research query","max_results":"10"}'
+use search SEARCH '{"query":"your keyword research query","max_results":"10"}'
 ```
 
 ## Objective
@@ -37,7 +37,7 @@ Increase organic search visibility by creating well-structured, keyword-optimize
 
 Search command for keyword research:
 ```
-openlabor-exec search SEARCH '{"query":"[keyword] site:reddit.com OR site:quora.com","max_results":"10","search_depth":"advanced"}'
+use search SEARCH '{"query":"[keyword] site:reddit.com OR site:quora.com","max_results":"10","search_depth":"advanced"}'
 ```
 
 ## On-Page SEO Checklist
@@ -106,10 +106,10 @@ A: [Concise, direct answer — 40–60 words]
 
 ```
 # Find what a competitor ranks for
-openlabor-exec search SEARCH '{"query":"site:[competitor.com] [topic]","max_results":"10"}'
+use search SEARCH '{"query":"site:[competitor.com] [topic]","max_results":"10"}'
 
 # Find competitor's top content
-openlabor-exec search SEARCH '{"query":"[competitor] most popular blog posts [topic]","max_results":"10"}'
+use search SEARCH '{"query":"[competitor] most popular blog posts [topic]","max_results":"10"}'
 ```
 
 Identify gaps: topics competitors rank for that you don't cover yet.

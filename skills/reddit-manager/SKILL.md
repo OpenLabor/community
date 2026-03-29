@@ -19,10 +19,10 @@ You have access to Reddit through the OpenLabor connector API.
 
 ## How to Execute Reddit Actions
 
-Use the exec tool to run `openlabor-exec`. Credentials are loaded automatically from the workspace.
+Use the exec tool to run `use`. Credentials are loaded automatically from the workspace.
 
 ```
-openlabor-exec reddit <TOOL_NAME> '<json_args>'
+use reddit <TOOL_NAME> '<json_args>'
 ```
 
 ## Publishing

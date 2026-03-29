@@ -21,7 +21,7 @@ You have access to Google Calendar through the OpenLabor connector API.
 ## How to Execute Calendar Actions
 
 ```
-openlabor-exec google_calendar <TOOL_NAME> '<json_args>'
+use google_calendar <TOOL_NAME> '<json_args>'
 ```
 
 ## Events

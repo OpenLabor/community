@@ -19,10 +19,10 @@ You have access to image generation through the OpenLabor API.
 
 ## How to Generate Images
 
-Use the exec tool to run `openlabor-exec`. Credentials are loaded automatically from the workspace.
+Use the exec tool to run `use`. Credentials are loaded automatically from the workspace.
 
 ```
-openlabor-exec images GENERATE '{"prompt":"your image description","model":"flux-schnell"}'
+use images GENERATE '{"prompt":"your image description","model":"flux-schnell"}'
 ```
 
 ### Parameters
@@ -49,23 +49,23 @@ openlabor-exec images GENERATE '{"prompt":"your image description","model":"flux
 ### List Available Models
 
 ```
-openlabor-exec images MODELS '{}'
+use images MODELS '{}'
 ```
 
 ### Examples
 
 ```
 # Social media post image
-openlabor-exec images GENERATE '{"prompt":"Modern minimal workspace with laptop showing analytics dashboard, warm lighting, top-down view","model":"flux-schnell","aspect_ratio":"1:1"}'
+use images GENERATE '{"prompt":"Modern minimal workspace with laptop showing analytics dashboard, warm lighting, top-down view","model":"flux-schnell","aspect_ratio":"1:1"}'
 
 # Twitter header
-openlabor-exec images GENERATE '{"prompt":"Abstract gradient background in deep blue and purple, subtle geometric patterns","model":"flux-dev","aspect_ratio":"16:9"}'
+use images GENERATE '{"prompt":"Abstract gradient background in deep blue and purple, subtle geometric patterns","model":"flux-dev","aspect_ratio":"16:9"}'
 
 # Instagram story
-openlabor-exec images GENERATE '{"prompt":"Bold typographic quote card, white text on dark background, motivational","model":"flux-schnell","aspect_ratio":"9:16"}'
+use images GENERATE '{"prompt":"Bold typographic quote card, white text on dark background, motivational","model":"flux-schnell","aspect_ratio":"9:16"}'
 
 # High-quality brand image
-openlabor-exec images GENERATE '{"prompt":"Professional product photo of a sleek SaaS dashboard on a MacBook, clean desk setup","model":"flux-2-pro","aspect_ratio":"16:9"}'
+use images GENERATE '{"prompt":"Professional product photo of a sleek SaaS dashboard on a MacBook, clean desk setup","model":"flux-2-pro","aspect_ratio":"16:9"}'
 ```
 
 ### Response Format

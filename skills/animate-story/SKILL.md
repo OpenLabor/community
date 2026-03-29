@@ -20,7 +20,7 @@ You have access to image generation through the OpenLabor API.
 ## How to Generate Images
 
 ```
-openlabor-exec images GENERATE '{"prompt":"...","model":"flux-schnell","aspect_ratio":"9:16","num_images":"1"}'
+use images GENERATE '{"prompt":"...","model":"flux-schnell","aspect_ratio":"9:16","num_images":"1"}'
 ```
 
 ## Styles
@@ -71,7 +71,7 @@ Scene 8: [anime] CTA scene — bold text with call to action
 For each anime scene, generate the image:
 
 ```
-openlabor-exec images GENERATE '{"prompt":"[scene description], anime style, manga aesthetic, vibrant colors, dramatic lighting, studio quality, detailed illustration","model":"flux-schnell","aspect_ratio":"9:16","num_images":"1"}'
+use images GENERATE '{"prompt":"[scene description], anime style, manga aesthetic, vibrant colors, dramatic lighting, studio quality, detailed illustration","model":"flux-schnell","aspect_ratio":"9:16","num_images":"1"}'
 ```
 
 **Style prompt suffix** — always append to every anime prompt:

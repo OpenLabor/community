@@ -21,7 +21,7 @@ You have access to Airtable through the OpenLabor connector API.
 ## How to Execute Airtable Actions
 
 ```
-openlabor-exec airtable <TOOL_NAME> '<json_args>'
+use airtable <TOOL_NAME> '<json_args>'
 ```
 
 ## Getting Started

@@ -21,10 +21,10 @@ You have access to web search through the OpenLabor API.
 
 ## How to Search
 
-Use the exec tool to run `openlabor-exec`. Credentials are loaded automatically from the workspace.
+Use the exec tool to run `use`. Credentials are loaded automatically from the workspace.
 
 ```
-openlabor-exec search SEARCH '{"query":"your search query","max_results":"5"}'
+use search SEARCH '{"query":"your search query","max_results":"5"}'
 ```
 
 ### Search Parameters
@@ -40,16 +40,16 @@ openlabor-exec search SEARCH '{"query":"your search query","max_results":"5"}'
 
 ```
 # Find trending topics in a niche
-openlabor-exec search SEARCH '{"query":"trending AI startup topics March 2026","max_results":"10"}'
+use search SEARCH '{"query":"trending AI startup topics March 2026","max_results":"10"}'
 
 # Competitor research
-openlabor-exec search SEARCH '{"query":"[competitor name] latest product updates","max_results":"5"}'
+use search SEARCH '{"query":"[competitor name] latest product updates","max_results":"5"}'
 
 # Find content ideas
-openlabor-exec search SEARCH '{"query":"most shared tweets about remote work this week","max_results":"10"}'
+use search SEARCH '{"query":"most shared tweets about remote work this week","max_results":"10"}'
 
 # Industry news
-openlabor-exec search SEARCH '{"query":"latest SaaS funding rounds 2026","search_depth":"advanced"}'
+use search SEARCH '{"query":"latest SaaS funding rounds 2026","search_depth":"advanced"}'
 ```
 
 ### Response Format
